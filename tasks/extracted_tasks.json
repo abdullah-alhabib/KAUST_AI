@@ -1,0 +1,53 @@
+{
+    "complex_tasks": [
+        {
+            "task": "Develop a new marketing strategy",
+            "description": "This task involves multiple steps including market research, team brainstorming sessions, drafting the strategy document, and obtaining approvals from various stakeholders."
+        },
+        {
+            "task": "Implement a new project management tool",
+            "description": "This task requires coordination among team members to evaluate different tools, select one, train the team on its use, and migrate existing projects to the new system."
+        }
+    ],
+    "simple_tasks": [
+        {
+            "type": "email",
+            "task": "Send a follow-up email to the marketing team",
+            "instructions": {
+                "objective": "To remind the marketing team about the upcoming strategy meeting.",
+                "involved": "Marketing team members",
+                "email_addresses": [
+                    "marketing_team@example.com"
+                ],
+                "subject": "Reminder: Upcoming Strategy Meeting",
+                "body": "Hi Team, just a reminder about our strategy meeting scheduled for next week. Please come prepared with your ideas. Best, [Your Name]",
+                "follow_up": "Check for responses and confirm attendance."
+            }
+        },
+        {
+            "type": "meeting",
+            "task": "Schedule a team brainstorming session",
+            "instructions": {
+                "objective": "To gather ideas for the new marketing strategy.",
+                "involved": "Marketing team members",
+                "date": "2023-10-15",
+                "time": "10:00 AM",
+                "duration": "1 hour",
+                "location": "Conference Room A",
+                "follow_up": "Send calendar invites to all team members."
+            }
+        },
+        {
+            "type": "reminder",
+            "task": "Set a reminder for the project management tool evaluation",
+            "instructions": {
+                "objective": "To ensure the team evaluates the selected project management tools by the deadline.",
+                "involved": "Project management team",
+                "date": "2023-10-20",
+                "time": "9:00 AM",
+                "message": "Reminder: Please complete the evaluation of the project management tools by the end of the day.",
+                "follow_up": "Check in with team members for their evaluations."
+            }
+        }
+    ]
+}
