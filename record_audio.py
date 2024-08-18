@@ -8,7 +8,7 @@ def record_audio():
     audio = audiorecorder("Click to record", "Click to stop recording")
 
     if len(audio) > 0:
-        # To play audio in frontend:
+        # To play audio in frontend:    
         st.audio(audio.export().read())
 
         # Create the 'audio' directory if it doesn't exist
