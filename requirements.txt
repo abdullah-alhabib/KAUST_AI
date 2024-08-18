@@ -1,1 +1,1 @@
-audiorecorder
+streamlit-audiorecorder
