@@ -2,52 +2,49 @@
     "complex_tasks": [
         {
             "task": "Develop a new marketing strategy",
-            "description": "This task involves multiple steps including market research, team brainstorming sessions, drafting the strategy document, and obtaining approvals from various stakeholders."
+            "description": "This task involves multiple steps including market research, team brainstorming sessions, and coordination with the design and sales teams to create a comprehensive plan."
         },
         {
             "task": "Implement a new project management tool",
-            "description": "This task requires coordination among team members to evaluate different tools, select one, train the team on its use, and migrate existing projects to the new system."
+            "description": "This task requires evaluating different tools, gathering team feedback, training staff, and migrating existing projects to the new system, which involves significant coordination and time."
         }
     ],
     "simple_tasks": [
         {
             "type": "email",
-            "task": "Send a follow-up email to the marketing team",
+            "task": "Send project update to stakeholders",
             "instructions": {
-                "objective": "To remind the marketing team about the upcoming strategy meeting.",
-                "involved": [
-                    "marketing_team@example.com"
-                ],
-                "content": "Subject: Reminder: Upcoming Marketing Strategy Meeting\n\nHi Team,\n\nThis is a reminder about our upcoming meeting to discuss the new marketing strategy. Please ensure you have your ideas ready.\n\nBest,\n[Your Name]",
-                "follow_up": "Check for responses and confirm attendance."
+                "objective": "Inform stakeholders about the current status of the project.",
+                "involve": "Project Manager, Stakeholders",
+                "email_address": "stakeholders@example.com",
+                "subject": "Project Update",
+                "body": "Dear Stakeholders, \n\nThis is to inform you about the current status of the project. Please find the attached report for details.\n\nBest regards,\nProject Manager",
+                "follow-up": "Check for responses by the end of the week."
             }
         },
         {
             "type": "meeting",
             "task": "Schedule a team brainstorming session",
             "instructions": {
-                "objective": "To gather ideas for the new marketing strategy.",
-                "involved": [
-                    "team_members@example.com"
-                ],
-                "date": "2023-10-15",
+                "objective": "Gather ideas for the new marketing strategy.",
+                "involve": "Marketing Team",
+                "date": "2023-11-01",
                 "time": "10:00 AM",
                 "duration": "1 hour",
                 "location": "Conference Room A",
-                "follow_up": "Send calendar invites to all participants."
+                "follow-up": "Send calendar invites to all team members."
             }
         },
         {
             "type": "reminder",
-            "task": "Set a reminder for the project management tool evaluation",
+            "task": "Remind team about the project deadline",
             "instructions": {
-                "objective": "To ensure the team evaluates the project management tools by the end of the week.",
-                "involved": [
-                    "team_lead@example.com"
-                ],
-                "date": "2023-10-20",
+                "objective": "Ensure the team is aware of the upcoming project deadline.",
+                "involve": "Project Team",
+                "date": "2023-11-15",
                 "time": "9:00 AM",
-                "follow_up": "Check in with the team for their evaluations."
+                "message": "Reminder: The project deadline is approaching on November 30th. Please ensure all tasks are completed.",
+                "follow-up": "Check in with team members a week before the deadline."
             }
         }
     ]

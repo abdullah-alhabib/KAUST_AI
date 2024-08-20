@@ -30,9 +30,13 @@ def extract_tasks(transcript):
 
     For complex tasks:
     - List them with a brief description of what makes them complex.
+    - task and their description.
 
     For simple tasks:
     - include the type of each task (e.g., email, meeting, reminder).
+    - for type email the attibutues should be type , task,  instructions where has objective, involve , email address, subject, body, follow-up only do not add more.
+    -for type meeting the attibutues should type, task and instructions where has objective, involve, date , time , duration , location and follow-up
+    -for type reminder the attibutues should type, task and instructions where has objective, involve, date , time , message ,follow-up only 
     - List each task with detailed, actionable instructions that could be used by an automated system (like a Large Actions Model, LAM) to perform the task with minimal or no human interaction.
     - Include specific details such as the task objective, who is involved, any necessary information (like email addresses, dates, and times), and any follow-up actions that may be required.
 

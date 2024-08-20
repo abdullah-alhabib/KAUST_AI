@@ -30,6 +30,8 @@ def run_script(script_name):
     return result.stdout, result.stderr
 
 def main():
+    if 'current_tab' not in st.session_state:
+        st.session_state.current_tab = 'tasks'
     with st.container():
         cols = st.columns(1)
         with cols[0]:
@@ -78,30 +80,30 @@ This project develops an AI system to streamline meetings by automating transcri
         if transcript_path:
             st.success(f"Transcribtion has been saved successfully :)")    
     if st.button("Run Summarizer and Extractor"):
-        with st.spinner("Running summarizer and extractor..."):
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    future_summarizer = executor.submit(run_script, 'summarizer.py')
-                    future_extractor = executor.submit(run_script, 'extractor.py')
+        # with st.spinner("Running summarizer and extractor..."):
+        #         with concurrent.futures.ThreadPoolExecutor() as executor:
+        #             future_summarizer = executor.submit(run_script, 'summarizer.py')
+        #             future_extractor = executor.submit(run_script, 'extractor.py')
 
-                    # Collect the results
-                    summarizer_output, summarizer_error = future_summarizer.result()
-                    extractor_output, extractor_error = future_extractor.result()
+        #             # Collect the results
+        #             summarizer_output, summarizer_error = future_summarizer.result()
+        #             extractor_output, extractor_error = future_extractor.result()
 
-                if summarizer_error:
-                    st.error(f"Summarizer error: {summarizer_error}")
-                else:
-                    st.success("Summarizer completed successfully!")
-                    st.text(summarizer_output)
+        #         if summarizer_error:
+        #             st.error(f"Summarizer error: {summarizer_error}")
+        #         else:
+        #             st.success("Summarizer completed successfully!")
+        #             st.text(summarizer_output)
 
-                if extractor_error:
-                    st.error(f"Extractor error: {extractor_error}")
-                else:
-                    st.success("Extractor completed successfully!")
-                    st.text(extractor_output)
+        #         if extractor_error:
+        #             st.error(f"Extractor error: {extractor_error}")
+        #         else:
+        #             st.success("Extractor completed successfully!")
+        #             st.text(extractor_output)
 
-                # If both scripts run successfully, run show_task.py
-                if not summarizer_error and not extractor_error:
-                    st.success("Both scripts completed successfully. Running show_task.py...")
+        #         # If both scripts run successfully, run show_task.py
+        #         if not summarizer_error and not extractor_error:
+        #             st.success("Both scripts completed successfully. Running show_task.py...")
                     display_summary()
                     # show_task_output, show_task_error = run_script('show_tasks.py')
                     # if show_task_error:
