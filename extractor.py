@@ -1,6 +1,6 @@
 import openai
-import json  # for reading JSON config
-import os  # for creating directories
+import json  
+import os  
 import re  
 import streamlit as st 
 # Load configuration

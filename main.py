@@ -30,22 +30,53 @@ def run_script(script_name):
     return result.stdout, result.stderr
 
 def main():
-    st.markdown("<h1 style='text-align: center; color: white;'> ActiMeet</h1>", unsafe_allow_html=True)
-    st.image("images/pipline.png", caption="pipline")
+    with st.container():
+        cols = st.columns(1)
+        with cols[0]:
+            st.image("images/icon_1.webp", width=100)
+
+
+
+    # Center the subtitle
+    st.markdown("<h2 style='text-align: center; color: white;'>The Meeting Wizard</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: white;'> Unlock the Power of In-person Meeting Using LLM + LAM Capabilities</h3>", unsafe_allow_html=True)
+
+    # Create four columns with expander taps
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        with st.expander("Overview"):
+            st.write(f"""
+
+This project develops an AI system to streamline meetings by automating transcription, summarization, and task management, seamlessly integrating with existing tools to enhance efficiency and productivity.                   
+                     """)
+
+    with col2:
+        with st.expander("Pipeline"):
+                st.image("images/pip.png", caption="Pipline")
+
+    with col3:
+        with st.expander("Technologies"):
+            st.image("images/tech.png", caption="Technologies")
+
+    with col4:
+        with st.expander("Future Work"):
+            st.image("images/future_work.png", caption="Future Work")
+
     st.sidebar.header("Configuration")
     api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
     if st.sidebar.button("Save API Key"):
         update_config(api_key)
 
-    if st.button("Record Audio"):
-        audio_path = record_audio()
-        if audio_path:
+    audio_path = record_audio()
+    if audio_path:
             st.write(f"Audio saved to: {audio_path}")
+    st.title("Transcription")
 
     if st.button("Transcribe Latest Audio"):
         transcript_path = transcribe_latest_audio()
         if transcript_path:
-            st.write(f"Transcript saved to: {transcript_path}")
+            st.success(f"Transcribtion has been saved successfully :)")    
     if st.button("Run Summarizer and Extractor"):
         with st.spinner("Running summarizer and extractor..."):
                 with concurrent.futures.ThreadPoolExecutor() as executor:
