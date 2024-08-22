@@ -1,3 +1,4 @@
 streamlit-audiorecorder
 openai-whisper
 openai
+ffmpeg
