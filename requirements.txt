@@ -1,5 +1,4 @@
 streamlit-audiorecorder
 openai-whisper
 openai
-apt-get update && apt-get install -y ffmpeg
 streamlit
