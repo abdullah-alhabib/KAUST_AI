@@ -20,7 +20,7 @@ def automate_task(task_key, task):
         task_type = task.get('type', 'complex')
         if task_type == 'email':
             send_email(
-                to_email=task['instructions']['email_addresses'][0],
+                to_email=task['instructions']['email_address'][0],
                 subject=task['instructions']['subject'],
                 body=task['instructions']['body']
             )
@@ -33,7 +33,7 @@ def automate_task(task_key, task):
         elif task_type == 'reminder':
             create_notion_task(
                 task_title=task['task'],
-                task_assigned_to=task['instructions']['involve'],
+                task_assigned_to=task['instructions']['involved'],
                 task_due_date=task['instructions']['date']
             )
         else:
@@ -58,6 +58,7 @@ def display_task_details(task):
         st.write(f"**Email Addresses:** {task['instructions']['email_address']}")
         st.write(f"**Subject:** {task['instructions']['subject']}")
         st.write(f"**Body:** {task['instructions']['body']}")
+        st.write(f"**Follow-Up:** {task['instructions']['follow-up']}")
     elif task['type'] == 'meeting':
         st.write(f"**Involved:** {task['instructions']['involve']}")
         st.write(f"**Date:** {task['instructions']['date']}")
@@ -158,4 +159,5 @@ def display_summary():
                     if st.button(button_text, key=task_key):
                         automate_task(task_key, task)  # Automate the task when button is clicked
                 st.write("---")
+
 

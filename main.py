@@ -9,17 +9,14 @@ import os
 
 def update_config(api_key):
     config_path = 'config.json'
-    # Load existing config or create a new one
     if os.path.exists(config_path):
         with open(config_path, 'r') as f:
             config = json.load(f)
     else:
         config = {}
 
-    # Update the API key
     config["openai_api_key"] = api_key
 
-    # Save the updated config
     with open(config_path, 'w') as f:
         json.dump(config, f, indent=4)
     st.success("API key saved successfully!")
@@ -30,32 +27,30 @@ def run_script(script_name):
     return result.stdout, result.stderr
 
 def main():
-    if 'current_tab' not in st.session_state:
-        st.session_state.current_tab = 'tasks'
-    with st.container():
-        cols = st.columns(1)
-        with cols[0]:
-            st.image("images/icon_1.webp", width=100)
+    # Initialize the summarizer_extractor_running state
+    if 'summarizer_extractor_running' not in st.session_state:
+        st.session_state.summarizer_extractor_running = False
+
+    st.image("images/icon_1.webp", width=100)
 
 
 
-    # Center the subtitle
+
+
     st.markdown("<h2 style='text-align: center; color: white;'>The Meeting Wizard</h2>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center; color: white;'> Unlock the Power of In-person Meeting Using LLM + LAM Capabilities</h3>", unsafe_allow_html=True)
 
-    # Create four columns with expander taps
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         with st.expander("Overview"):
-            st.write(f"""
-
-This project develops an AI system to streamline meetings by automating transcription, summarization, and task management, seamlessly integrating with existing tools to enhance efficiency and productivity.                   
-                     """)
+            st.write("""
+This project develops an AI system to streamline meetings by automating transcription, summarization, and task management, seamlessly integrating with existing tools to enhance efficiency and productivity.
+            """)
 
     with col2:
         with st.expander("Pipeline"):
-                st.image("images/pip.png", caption="Pipline")
+            st.image("images/pip.png", caption="Pipeline")
 
     with col3:
         with st.expander("Technologies"):
@@ -78,39 +73,55 @@ This project develops an AI system to streamline meetings by automating transcri
     if st.button("Transcribe Latest Audio"):
         transcript_path = transcribe_latest_audio()
         if transcript_path:
-            st.success(f"Transcribtion has been saved successfully :)")    
+            st.success("Transcription has been saved successfully :)")
+    
+    # Directly check for the button click event
     if st.button("Run Summarizer and Extractor"):
-        # with st.spinner("Running summarizer and extractor..."):
-        #         with concurrent.futures.ThreadPoolExecutor() as executor:
-        #             future_summarizer = executor.submit(run_script, 'summarizer.py')
-        #             future_extractor = executor.submit(run_script, 'extractor.py')
+       # Set the session state to running and directly trigger the summarization
+        st.session_state.summarizer_extractor_running = True
 
-        #             # Collect the results
-        #             summarizer_output, summarizer_error = future_summarizer.result()
-        #             extractor_output, extractor_error = future_extractor.result()
+    # If the state is running, execute the summarization and extractor function
+    if st.session_state.summarizer_extractor_running:
+        with st.spinner("Running summarizer and extractor..."):
 
-        #         if summarizer_error:
-        #             st.error(f"Summarizer error: {summarizer_error}")
-        #         else:
-        #             st.success("Summarizer completed successfully!")
-        #             st.text(summarizer_output)
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                future_summarizer = executor.submit(run_script, 'summarizer.py')
+                future_extractor = executor.submit(run_script, 'extractor.py')
+                print('X')
 
-        #         if extractor_error:
-        #             st.error(f"Extractor error: {extractor_error}")
-        #         else:
-        #             st.success("Extractor completed successfully!")
-        #             st.text(extractor_output)
+                # Collect the results
+                summarizer_output, summarizer_error = future_summarizer.result()
+                extractor_output, extractor_error = future_extractor.result()
 
-        #         # If both scripts run successfully, run show_task.py
-        #         if not summarizer_error and not extractor_error:
-        #             st.success("Both scripts completed successfully. Running show_task.py...")
-                    display_summary()
-                    # show_task_output, show_task_error = run_script('show_tasks.py')
-                    # if show_task_error:
-                    #     st.error(f"Show Task error: {show_task_error}")
-                    # else:
-                    #     st.success("Show Task completed successfully!")
-                    #     st.text(show_task_output)
+            if summarizer_error:
+                st.error(f"Summarizer error: {summarizer_error}")
+            else:
+                st.success("Summarizer completed successfully!")
+                st.text(summarizer_output)
+
+            if extractor_error:
+                st.error(f"Extractor error: {extractor_error}")
+            else:
+                st.success("Extractor completed successfully!")
+                st.text(extractor_output)
+
+            # If both scripts run successfully, run show_task.py
+            if not summarizer_error and not extractor_error:
+                st.session_state.summarizer_extractor_running = True
+                #st.success("Both scripts completed successfully. Running show_task.py...")
+                display_summary()
+                #show_task_output, show_task_error = run_script('show_tasks.py')
+
+                # if show_task_error:
+                #     st.error(f"Show Task error: {show_task_error}")
+                # else:
+                #     st.success("Show Task completed successfully!")
+                #     st.text(show_task_output)
+
+
+        # After the process is complete, reset the session state
+        #st.session_state.summarizer_extractor_running = False
+        #st.success("Summarization and Extraction complete!")
 
 if __name__ == "__main__":
     main()

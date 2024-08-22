@@ -2,11 +2,11 @@
     "complex_tasks": [
         {
             "task": "Develop a new marketing strategy",
-            "description": "This task involves multiple steps including market research, team brainstorming sessions, and coordination with the design and sales teams to create a comprehensive plan."
+            "description": "This task requires research, collaboration among the marketing team, and the creation of a comprehensive plan that includes target audience analysis, budget allocation, and timeline for implementation."
         },
         {
             "task": "Implement a new project management tool",
-            "description": "This task requires evaluating different tools, gathering team feedback, training staff, and migrating existing projects to the new system, which involves significant coordination and time."
+            "description": "This involves evaluating different tools, coordinating with the IT department for integration, training team members, and setting up workflows, which requires significant planning and resources."
         }
     ],
     "simple_tasks": [
@@ -15,20 +15,20 @@
             "task": "Send project update to stakeholders",
             "instructions": {
                 "objective": "Inform stakeholders about the current status of the project.",
-                "involve": "Project Manager, Stakeholders",
+                "involve": "Project manager, stakeholders",
                 "email_address": "stakeholders@example.com",
                 "subject": "Project Update",
-                "body": "Dear Stakeholders, \n\nThis is to inform you about the current status of the project. Please find the attached report for details.\n\nBest regards,\nProject Manager",
+                "body": "Dear Stakeholders, \n\nI wanted to provide you with a quick update on the project. We are currently on track with our timeline and have completed the initial phases. \n\nBest regards, \nProject Manager",
                 "follow-up": "Check for responses by the end of the week."
             }
         },
         {
             "type": "meeting",
-            "task": "Schedule a team brainstorming session",
+            "task": "Schedule a team meeting",
             "instructions": {
-                "objective": "Gather ideas for the new marketing strategy.",
-                "involve": "Marketing Team",
-                "date": "2023-11-01",
+                "objective": "Discuss project milestones and next steps.",
+                "involve": "All team members",
+                "date": "2023-10-15",
                 "time": "10:00 AM",
                 "duration": "1 hour",
                 "location": "Conference Room A",
@@ -37,14 +37,14 @@
         },
         {
             "type": "reminder",
-            "task": "Remind team about the project deadline",
+            "task": "Remind team about the deadline",
             "instructions": {
                 "objective": "Ensure the team is aware of the upcoming project deadline.",
-                "involve": "Project Team",
-                "date": "2023-11-15",
+                "involve": "All team members",
+                "date": "2023-10-10",
                 "time": "9:00 AM",
-                "message": "Reminder: The project deadline is approaching on November 30th. Please ensure all tasks are completed.",
-                "follow-up": "Check in with team members a week before the deadline."
+                "message": "Reminder: The project deadline is approaching on October 15th. Please ensure all tasks are completed.",
+                "follow-up": "Check in with team members after the reminder."
             }
         }
     ]

@@ -4,16 +4,15 @@
         "main_points": [
             "Project milestones were reviewed and assessed.",
             "Challenges related to resource allocation were discussed.",
-            "Team members provided updates on their respective tasks.",
-            "Future deadlines and deliverables were outlined."
+            "Upcoming deadlines and deliverables were outlined."
         ],
         "decisions_made": [
-            "To allocate additional resources to the marketing team.",
-            "To extend the deadline for the current phase of the project by two weeks."
+            "To allocate additional resources to the project.",
+            "To extend the deadline for the current phase by two weeks."
         ],
         "action_items": [
-            "Marketing team to submit a revised resource plan by next week.",
-            "All team members to update their task progress in the project management tool by Friday."
+            "Team leads to submit updated resource plans by next week.",
+            "Schedule a follow-up meeting in two weeks to review progress."
         ]
     }
 }
