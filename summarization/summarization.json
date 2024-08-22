@@ -1,18 +1,19 @@
 {
     "summarization": {
-        "description": "The meeting focused on reviewing project progress, addressing challenges, and planning next steps.",
+        "description": "The meeting was held to discuss project updates, address challenges, and outline next steps for the team.",
         "main_points": [
-            "Project milestones were reviewed and assessed.",
-            "Challenges related to resource allocation were discussed.",
-            "Upcoming deadlines and deliverables were outlined."
+            "Project timelines were reviewed and adjusted.",
+            "Team members shared updates on their respective tasks.",
+            "Challenges related to resource allocation were identified.",
+            "Feedback from stakeholders was discussed."
         ],
         "decisions_made": [
-            "To allocate additional resources to the project.",
-            "To extend the deadline for the current phase by two weeks."
+            "To extend the project deadline by two weeks.",
+            "To allocate additional resources to the marketing team."
         ],
         "action_items": [
-            "Team leads to submit updated resource plans by next week.",
-            "Schedule a follow-up meeting in two weeks to review progress."
+            "Team members to submit updated task lists by the end of the week.",
+            "Schedule a follow-up meeting in two weeks to assess progress."
         ]
     }
 }

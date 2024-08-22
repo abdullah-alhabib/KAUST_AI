@@ -6,7 +6,7 @@
         },
         {
             "task": "Implement a new project management tool",
-            "description": "This involves evaluating different tools, coordinating with the IT department for integration, training team members, and setting up workflows, which requires significant planning and resources."
+            "description": "This involves evaluating different tools, coordinating with the IT department for integration, training team members, and setting up workflows, which requires significant time and resources."
         }
     ],
     "simple_tasks": [
@@ -26,7 +26,7 @@
             "type": "meeting",
             "task": "Schedule a team meeting",
             "instructions": {
-                "objective": "Discuss project milestones and next steps.",
+                "objective": "Discuss project progress and next steps.",
                 "involve": "All team members",
                 "date": "2023-10-15",
                 "time": "10:00 AM",
