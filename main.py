@@ -7,6 +7,7 @@ import concurrent.futures
 import json 
 import os
 import openai
+os.system('pip install streamlit-audiorecorder openai==1.42.0 streamlit tqdm==4.66.5 openai-whisper')
 def update_config(api_key):
     config_path = 'config.json'
     if os.path.exists(config_path):
