@@ -27,15 +27,6 @@ def run_script(script_name):
     return result.stdout, result.stderr
 
 def main():
-        response = openai.chat.completions.create(
-        model=model,
-        seed=1,
-        messages=[
-            {"role": "system", "content": prompt}
-        ],
-        max_tokens=max_tokens,
-        temperature=temperature
-    )
     # Initialize the summarizer_extractor_running state
     if 'summarizer_extractor_running' not in st.session_state:
         st.session_state.summarizer_extractor_running = False
