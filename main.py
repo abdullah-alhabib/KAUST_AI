@@ -6,7 +6,7 @@ import subprocess
 import concurrent.futures
 import json 
 import os
-
+import openai
 def update_config(api_key):
     config_path = 'config.json'
     if os.path.exists(config_path):
