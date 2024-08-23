@@ -7,6 +7,16 @@ import concurrent.futures
 import json 
 import os
 import openai
+def test_openai_api():
+    try:
+        # Try to list models as a simple API test
+        openai.api_key = st.session_state.api_key
+        models = openai.Model.list()
+        print(models)
+        return True, "API test successful. Connection to OpenAI established."
+    except Exception as e:
+        return False, f"API test failed. Error: {str(e)}"
+
 def update_config(api_key):
     config_path = 'config.json'
     if os.path.exists(config_path):
@@ -64,6 +74,17 @@ This project develops an AI system to streamline meetings by automating transcri
     api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
     if st.sidebar.button("Save API Key"):
         update_config(api_key)
+        st.session_state.api_key = api_key
+
+    if st.sidebar.button("Test OpenAI API"):
+        if 'api_key' in st.session_state and st.session_state.api_key:
+            success, message = test_openai_api()
+            if success:
+                st.sidebar.success(message)
+            else:
+                st.sidebar.error(message)
+        else:
+            st.sidebar.warning("Please enter and save your API key first.")
 
     audio_path = record_audio()
     if audio_path:
