@@ -1,5 +1,5 @@
 streamlit-audiorecorder
 openai
 streamlit
-tqdm==latest
-openai-whisper==latest
+tqdm==4.66.5
+openai-whisper
