@@ -15,7 +15,7 @@ def load_config(config_file):
 config = load_config('config.json')  # Change to 'config.yaml' if you're using YAML
 
 # Set API key and other parameters
-openai.api_key = config['openai_api_key']
+openai.api_key =st.secrets["OPENAI_KEY"]
 model = config['model']
 temperature = config['temperature']
 max_tokens = config['max_tokens']

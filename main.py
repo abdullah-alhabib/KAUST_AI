@@ -8,19 +8,19 @@ import concurrent.futures
 import json 
 import os
 
-def update_config(api_key):
-    config_path = 'config.json'
-    if os.path.exists(config_path):
-        with open(config_path, 'r') as f:
-            config = json.load(f)
-    else:
-        config = {}
+# def update_config(api_key):
+#     config_path = 'config.json'
+#     if os.path.exists(config_path):
+#         with open(config_path, 'r') as f:
+#             config = json.load(f)
+#     else:
+#         config = {}
 
-    config["openai_api_key"] = api_key
+#     config["openai_api_key"] = api_key
 
-    with open(config_path, 'w') as f:
-        json.dump(config, f, indent=4)
-    st.success("API key saved successfully!")
+#     with open(config_path, 'w') as f:
+#         json.dump(config, f, indent=4)
+#     st.success("API key saved successfully!")
 
 def run_script(script_name):
     """Run a script and return the output."""
