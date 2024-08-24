@@ -1,3 +1,4 @@
+import openai 
 import streamlit as st
 from record_audio import record_audio
 from  transcriber import transcribe_latest_audio

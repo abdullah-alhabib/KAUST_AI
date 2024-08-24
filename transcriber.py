@@ -1,6 +1,6 @@
 import os
 import glob
-import whisper
+import whisper  
 import streamlit as st
 
 def transcribe_latest_audio():
