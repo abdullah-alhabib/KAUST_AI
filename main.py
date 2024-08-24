@@ -72,9 +72,9 @@ This project develops an AI system to streamline meetings by automating transcri
         transcript_path = transcribe_latest_audio()
         if transcript_path:
             st.success("Transcription has been saved successfully :)")
-    
+    st.title("Try meeting wizard now !")
     # Directly check for the button click event
-    if st.button("Run Summarizer and Extractor"):
+    if st.button("Run pipeline"):
        # Set the session state to running and directly trigger the summarization
         st.session_state.summarizer_extractor_running = True
 
