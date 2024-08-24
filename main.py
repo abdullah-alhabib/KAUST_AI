@@ -61,10 +61,7 @@ This project develops an AI system to streamline meetings by automating transcri
         with st.expander("Future Work"):
             st.image("images/future_work.png", caption="Future Work")
 
-    st.sidebar.header("Configuration")
-    api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
-    if st.sidebar.button("Save API Key"):
-        update_config(api_key)
+
 
     audio_path = record_audio()
     if audio_path:
